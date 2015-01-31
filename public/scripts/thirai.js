@@ -4,7 +4,7 @@ var thirai = thirai || {};
   'use strict';
 
   thirai.loadCategoryContent = {
-    jsonUrl: 'stubs/movie-details.json',
+    jsonUrl: 'stubs/movies-details.json',
     rawTemplate: $('#article-card-item-template').html(),
     $placeHolder: $('#movie-card'),
 
@@ -20,26 +20,23 @@ var thirai = thirai || {};
         $.each(data, function(index, element) {
           var html = template(element);
           me.$placeHolder.append(html);
-          console.log(element);
-          me.bindUIEvents();
         });
       });
+
+      me.bindUIEvents();
     },
     
     bindUIEvents: function () {
-      $('.movie-card').on('click', function() {
+      $(document).on('click', '.movie-card', function() {
         $(this).toggleClass('flipped');
       });
       
-      $('.tab-item').on('click', function(e) {
+     $(document).on('click', '.tab-item', function(e) {
         e.stopPropagation();
+        e.preventDefault();
         
-        $('.tab-item').removeClass('active');
-        $(this).addClass('active');
-      });
-      
-      $(function(){
-        $('#featured').tabs({updateHash: true});
+        $(this).parent().find('.tab-item').removeClass('active');
+          $(this).addClass('active');
       });
     }
   };
@@ -47,4 +44,4 @@ var thirai = thirai || {};
 
 if ($('#movie-card').length) {
   $(thirai.loadCategoryContent.init());
-}
+} 
