@@ -35,8 +35,17 @@ var thirai = thirai || {};
         e.stopPropagation();
         e.preventDefault();
         
+        var index = $(this).index();
+        console.log(index);
+        
         $(this).parent().find('.tab-item').removeClass('active');
+          var $tabPanel = $(this).parent().parent().find('.tabs-panel');
+          var hiddenTabIndex = parseInt(index - 1);
+
           $(this).addClass('active');
+          $($tabPanel).removeClass('tabs-panel-selected');
+          $($tabPanel[hiddenTabIndex]).hide();
+          $($tabPanel[index]).addClass('tabs-panel-selected').show();
       });
     }
   };

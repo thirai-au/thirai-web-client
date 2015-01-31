@@ -1,38 +1,32 @@
 [
   {
-    "title": "Pizza",
-    "poster": "images/posters/Pizza.jpg",
-    "starring": "Vijay Sethupathi, Remya Nambeesan",
-    "director": "Karthik Subbaraj",
-    "music": "Santhosh Narayanan",
+    "title": "I",
+    "poster": "images/posters/I.jpg",
+    "starring": "Vikram, Amy Jackson",
+    "director": "S. Shankar",
+    "music": "A. R. Rahman",
     "length": "188 minutes",
-    "overview": "The story is about how a pizza delivery boy lands in a mysterious circumstance and how it works a dramatic change in his life. A very different thriller which will make you sweat."
+    "overview": "Lingesan, a deformed hunchback who was once a body builder and a handsome model, seeks revenge on another male model who is responsible for ruining his life.",
+    "video": "https://www.youtube.com/watch?v=8uPK9Ov6Zd4",
+    "cinema": "Hoyts",
+    "locations": "Highpoint",
+    "dates": "15/01/2015 - 04/02/2015",
+    "times": "Click the ticket link to view session times",
+    "ticket": "http://www.hoyts.com.au/movies/2015/i_tamil.aspx"
   },
   {
-    "title": "Soodhu Kavvum",
-    "poster": "images/posters/SoodhuKavvum.jpg",
-    "starring": "Vijay Sethupathi, Remya Nambeesan",
-    "director": "Karthik Subbaraj",
-    "music": "Santhosh Narayanan",
-    "length": "188 minutes",
-    "overview": "The story is about how a pizza delivery boy lands in a mysterious circumstance and how it works a dramatic change in his life. A very different thriller which will make you sweat."
-  },
-  {
-    "title": "Naduvula Konjam PakkathaKaanom",
-    "poster": "images/posters/NaduvulaKonjamPakkathaKaanom.jpg",
-    "starring": "Vijay Sethupathi, Remya Nambeesan",
-    "director": "Karthik Subbaraj",
-    "music": "Santhosh Narayanan",
-    "length": "188 minutes",
-    "overview": "The story is about how a pizza delivery boy lands in a mysterious circumstance and how it works a dramatic change in his life. A very different thriller which will make you sweat."
-  },
-  {
-    "title": "Idharkuthane Aasaipattai Balakumara",
-    "poster": "images/posters/IdharkuthaneAasaipattaiBalakumara.jpg",
-    "starring": "Vijay Sethupathi, Remya Nambeesan",
-    "director": "Karthik Subbaraj",
-    "music": "Santhosh Narayanan",
-    "length": "188 minutes",
-    "overview": "The story is about how a pizza delivery boy lands in a mysterious circumstance and how it works a dramatic change in his life. A very different thriller which will make you sweat."
+    "title": "Yennai Arindhaal",
+    "poster": "images/posters/YennaiArindhaal.jpg",
+    "starring": "Ajith Kumar, Trish Krishnan, Anushka Shetty",
+    "director": "Gautham Menon",
+    "music": "Harris Jayaraj",
+    "length": "185 minutes",
+    "overview": "A man is haunted by the death of his wife and pursues the person who was responsible.",
+    "video": "https://www.youtube.com/watch?v=B7c87SWQg-Y",
+    "cinema": "Village Cinemas",
+    "locations": "Bendigo, Fountain Gate, Knox, Sunshine",
+    "dates": "05/02/2015 - 11/02/2015",
+    "times": "Click the ticket link to view session times",
+    "ticket": "http://villagecinemas.com.au/movies/yennai_arindhaal"
   }
 ]

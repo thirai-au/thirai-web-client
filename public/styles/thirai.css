@@ -1,0 +1,156 @@
+html {
+    box-sizing: border-box;
+  }
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    font-size: 14px;
+  }
+
+  img {
+    max-height: 100%;
+  }
+  
+  .cf:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .movie-card {
+    perspective: 1000;
+    overflow: hidden;
+    margin-bottom: 1em;
+  }
+  
+  .movie-card.flipped .movie-card-inner {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  
+  .movie-card,
+  .card-front,
+  .card-back {
+    width: 300px;
+    height: 480px;
+  }
+
+  .movie-card-inner {
+    transition: 0.3s;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+
+  .card-front,
+  .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .card-front {
+    /*-webkit-transform: rotateY(0deg);*/
+    /*transform: rotateY(0deg);*/
+    z-index: 2;
+  }
+
+  .card-back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background: #333;
+    color: #fff;
+    padding: 0 10px;
+  }
+  
+  .tabs {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .tab-item {
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    width: 140px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+  }
+  
+  .tab-item a {
+    padding: 5px 10px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .tab-item.active a {
+    background: rgba(255, 255, 255, 0.75);
+    color: #333;
+  }
+  
+  .tab-item:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  
+  .tab-item:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .movie-title {
+    font-size: 24px;
+    font-weight: 300;
+  }
+  
+  .card-back-background {
+    -webkit-filter: blur(10px);
+    z-index: -1;
+    position: absolute;
+    opacity: 0.2;
+    left: -5px;
+    top: -15px;
+  }
+  
+  .button {
+    display: block;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .movie-details .detail {
+    margin-left: 0;
+    width: 65%;
+  }
+  
+  .movie-details .label {
+    color: #ccc;
+    width: 35%;
+  }
+  
+  .movie-details .detail,
+  .movie-details .label {
+    float: left;
+    margin-top: 1em;
+  }
+  
+  .tabs-panel {
+    opacity: 0;
+    transition: all 600ms ease;
+    height: 0;
+  }
+  
+  .tabs-panel-selected {
+    opacity: 1;
+    height: auto;
+  }
