@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <title>Thirai</title>
+
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/animate.css">
+    <link rel="stylesheet" href="styles/thirai.css">
+  </head>
+
+  <body>
+    <div class="screen">
+      <%- partial("_components/_top_bar") %>
+
+      <div class="movies">
+        <%- partial("_components/_movie_list") %>
+        <%- partial("_components/_movie_details_list") %>
+      </div>
+    </div>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/handlebars.js"></script>
+    <script src="scripts/thirai.js"></script>
+  </body>
+</html>

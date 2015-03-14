@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Movie Card</title>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" href="styles/thirai.css">
-</head>
+  <head>
+    <meta charset="utf-8">
+    <title>Movie Card</title>
 
-<body>
-  <script id="article-card-item-template" type="text/x-handlebars-template">
-    <div class="movie-card">
-      <div class="movie-card-inner">
-        <div class="card-front">
-          <img src="{{poster}}">
-        </div>
-  
-        <div class="card-back">
-          <img src="{{poster}}" class="card-back-background">
-          <h1 class="movie-title">{{title}}</h1>
-          <div class="tabs-container">
-            <ul class="tabs cf">
-              <li class="tab-item active"><a href="#details">Details</a></li>
-              <li class="tab-item"><a href="#sessions">Sessions</a></li>
-            </ul>
-            
-            <div class="tabs-content">
-              <div class="tabs-panel tabs-panel-selected cf">
-                <dl class="movie-details cf">
-                  <dt class="label">Starring</dt>
-                  <dd class="detail">{{starring}}</dd>
-                  <dt class="label">Directed by</dt>
-                  <dd class="detail">{{director}}</dd>
-                  <dt class="label">Music by</dt>
-                  <dd class="detail">{{music}}</dd>
-                  <dt class="label">Running time</dt>
-                  <dd class="detail">{{length}}</dd>
-                  <dt class="label">Overview</dt>
-                  <dd class="detail">The story is about how a pizza delivery boy lands in a mysteriou circumstance and how it works a dramatic change in his life. A very different thriller which will make you sweat.</dd>
-                </dl>
-                <a class="button" href="{{video}}">Watch Trailer</a>
-              </div>
-              
-              <div class="tabs-panel cf">
-                <dl class="movie-details cf">
-                  <dt class="label">Cinema</dt>
-                  <dd class="detail">{{cinema}}</dd>
-                  <dt class="label">Locations</dt>
-                  <dd class="detail">{{locations}}</dd>
-                  <dt class="label">Dates</dt>
-                  <dd class="detail">{{dates}}</dd>
-                  <dt class="label">Times</dt>
-                  <dd class="detail">{{times}}</dd>
-                </dl>
-                <a class="button" href="{{ticket}}">Buy Tickets</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="styles/thirai.css">
+  </head>
+
+  <body>
+    <script id="article-card-item-template" type="text/x-handlebars-template">
+      <div class="movie-card">
+        <div class="movie-card-inner">
+          <div class="card-front">
+            <img src="http://image.tmdb.org/t/p/w342/{{movie_details.poster_path}}.jpg">
+          </div>
+
+          <div class="card-back">
+            <img src="http://image.tmdb.org/t/p/w342/{{movie_details.poster_path}}.jpg" class="card-back-background">
+            <h1 class="movie-title">{{ movie_details.original_title }}</h1>
+            <div class="tabs-container">
+              <ul class="tabs cf">
+                <li class="tab-item active"><a href="#details">Details</a></li>
+                <li class="tab-item"><a href="#sessions">Sessions</a></li>
+              </ul>
+
+              <div class="tabs-content">
+                <div class="tabs-panel tabs-panel-selected cf">
+                  <dl class="movie-details cf">
+                    <dt class="label">Starring</dt>
+                    <dd class="detail">{{movie_details.cast}}</dd>
+                    <dt class="label">Directed by</dt>
+                    <dd class="detail">{{movie_details.director}}</dd>
+                    <dt class="label">Music by</dt>
+                    <dd class="detail">{{movie_details.music}}</dd>
+                    <dt class="label">Running time</dt>
+                    <dd class="detail">{{movie_details.runtime}}</dd>
+                    <dt class="label">Overview</dt>
+                    <dd class="detail">{{movie_details.overview}}</dd>
+                  </dl>
+                  <a class="button" href="https://www.youtube.com/watch?v={{movie_details.trailer_id}}">Watch Trailer</a>
+                </div>
+
+                <div class="tabs-panel cf">
+                  {{#sessions}}
+                  <dl class="movie-details cf">
+                    <dt class="label">Cinema</dt>
+                    <dd class="detail">{{cinema}}, {{suburb}}, {{city}}</dd>
+                    <dt class="label">Dates</dt>
+                    <dd class="detail">{{start_date}} &ndash; {{end_date}}</dd>
+                    <dt class="label">Times</dt>
+                    <dd class="detail">{{session_times}}</dd>
+                  </dl>
+                  <a class="button" href="{{booking_url}}">Buy Tickets</a>
+                  {{/sessions}}
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </script>
+    </script>
 
-  <div id="movie-card"></div>
+    <div id="movie-card"></div>
 
-  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
-  <script src="scripts/thirai.js"></script>
-</body>
+<!--
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+-->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/handlebars.js"></script>
+    <script src="scripts/thirai.js"></script>
+  </body>
 </html>

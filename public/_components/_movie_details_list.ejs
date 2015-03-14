@@ -1,0 +1,63 @@
+<div class="details-list" id="movie-details-list">
+  <script type="text/x-handlebars-template" id="movieDetailsListItemTemplate">
+    <div class="movie-detailz" data-id="{{movie_details.movie_id}}">
+      {{#movie_details}}
+      <img class="card-back-background" src="http://image.tmdb.org/t/p/w342/{{poster_path}}.jpg" alt="{{original_title}}">
+      <h2 class="movie-title">{{movie_details.original_title}}</h2>
+      {{/movie_details}}
+
+      <div class="tabs-container">
+        <ul class="tabs cf">
+          <li class="tab-item active">
+            <a href="#details">Details</a>
+          </li>
+          <li class="tab-item">
+            <a href="#sessions">Sessions</a>
+          </li>
+        </ul>
+
+        <div class="tabs-content">
+          <div class="tabs-panel tabs-panel-selected cf" id="details">
+            {{#movie_details}}
+            <dl class="movie-details cf">
+              <dt class="label">Starring</dt>
+              <dd class="detail">{{cast}}</dd>
+
+              <dt class="label">Directed by</dt>
+              <dd class="detail">{{director}}</dd>
+
+              <dt class="label">Music by</dt>
+              <dd class="detail">{{music}}</dd>
+
+              <dt class="label">Run time</dt>
+              <dd class="detail">{{runtime}}</dd>
+
+              <dt class="label">Overview</dt>
+              <dd class="detail">{{overview}}</dd>
+            </dl>
+
+            <a class="button" href="https://www.youtube.com/watch?v={{trailer_id}}">Watch Trailer</a>
+            {{/movie_details}}
+          </div><!-- /details -->
+
+          <div class="tabs-panel cf" id="sessions">
+            {{#sessions}}
+            <dl class="movie-details cf">
+              <dt class="label">Cinema</dt>
+              <dd class="detail">{{cinema}}, {{suburb}}, {{city}}</dd>
+
+              <dt class="label">Dates</dt>
+              <dd class="detail">{{start_date}} &ndash; {{end_date}}</dd>
+
+              <dt class="label">Times</dt>
+              <dd class="detail">{{session_times}}</dd>
+            </dl>
+
+            <a class="button" href="{{booking_url}}">Buy Tickets</a>
+            {{/sessions}}
+          </div><!-- /sessions -->
+        </div><!-- /tabs-content -->
+      </div><!-- /tabs-container -->
+    </div>
+  </script>
+</div>
